@@ -36,3 +36,4 @@ Apresentar os dados
 # Operadores
 - [x] Operadores de atribuição de valor =
 - [x] Operadores de concatenação +
+- [x] Operador spread [...]
