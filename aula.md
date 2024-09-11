@@ -40,4 +40,4 @@ Apresentar os dados
 
 # Estruturas de dados:
 ## Arrays:
-- [x] Métodos de array: push, [forEach, find, filter]: HOF (Higher Order Function)
+- [x] Métodos de array: push, [forEach, find, filter, map]: HOF (Higher Order Function)
