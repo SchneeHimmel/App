@@ -18,3 +18,16 @@ Forma de instruir o computador a resolver um problema através de algorítmos e 
 Coleta de dados
 Processar os dados (manipular, alterar, etc ...)
 Apresentar os dados
+
+# Estrutura de repetição
+- [x] while
+
+# Condicionais
+- [x] switch-case
+
+## Módulos em Node.js:
+- [x] Importação de módulos (require, CommomJS)
+- [x] Biblioteca 'inquirer' para criar prompts interativos
+
+## Programação assícronas e Promises:
+- [x] Uso de funções assíncronas (async/await)
