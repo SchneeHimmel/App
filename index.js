@@ -1,5 +1,7 @@
 const { select, input, checkbox } = require('@inquirer/prompts')
 
+let mensagem = "Bem vindo ao App de metas";
+
 let meta = {
   value: 'Exercitar 1h todo dia',
   checked: false,
@@ -11,11 +13,13 @@ async function cadastrarMeta() {
   const meta = await input({ message: "Digite a meta: " })
 
   if (meta.length == 0) {
-    console.log("A meta está vazia.")
+    mensagem = "A meta está vazia."
     return
   }
 
   metas.push({ value: meta, checked: false })
+
+  mensagem = "Meta cadastrada com sucesso"
 }
 async function listarMetas() {
   const respostas = await checkbox({
@@ -29,7 +33,7 @@ async function listarMetas() {
   ])
 
   if (respostas.length == 0) {
-    console.log("Nenhuma meta selecionada.")
+    mensagem = "Nenhuma meta selecionada."
     return
   }
 
@@ -41,7 +45,7 @@ async function listarMetas() {
     meta.checked = true
   })
 
-  console.log('Meta(s) marcadas como concluída(s)')
+  mensagem = "Meta(s) marcada(s) como concluída(s)"
 }
 async function metasRealizadas() {
   const realizadas = metas.filter((meta) => {
@@ -49,7 +53,7 @@ async function metasRealizadas() {
   })
 
   if (realizadas.length == 0) {
-    console.log("Não existem metas concluídas")
+    mensagem = "Não existem metas concluídas"
     return
   }
 
@@ -65,7 +69,7 @@ async function metasAbertas() {
   })
 
   if (abertas.length == 0) {
-    console.log("Não existem metas abertas.")
+    mensagem = "Não existem metas abertas."
     return
   }
 
@@ -86,7 +90,7 @@ async function deletarMetas() {
   })
 
   if (paraDeletar.length == 0) {
-    console.log("Nenhuma meta para deletar.")
+    mensagem = "Nenhuma meta para deletar."
     return
   }
 
@@ -96,12 +100,21 @@ async function deletarMetas() {
     })
   })
 
-  console.log("Meta(s) deletada(s) com sucesso.")
+  mensagem = "Meta(s) deletada(s) com sucesso."
+}
+function limparMsg() {
+  console.clear();
+
+  if (mensagem != "") {
+    console.log(mensagem)
+    console.log("")
+    mensagem = ""
+  }
 }
 // pode ser escrito como arrow function : const start = async () => {}
 async function start() {
   while (true) {
-
+    limparMsg()
     // const name = await promise
     const opcao = await select({
       message: "Menu >",
@@ -123,7 +136,7 @@ async function start() {
           value: "abertas"
         },
         {
-          name: "Metas deletadas",
+          name: "Metas para deletar",
           value: "deletar"
         },
         {
@@ -136,7 +149,6 @@ async function start() {
     switch (opcao) {
       case "cadastro":
         await cadastrarMeta()
-        console.log(metas)
         break
       case "lista":
         await listarMetas()
