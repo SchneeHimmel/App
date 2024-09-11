@@ -36,4 +36,8 @@ Apresentar os dados
 # Operadores
 - [x] Operadores de atribuição de valor =
 - [x] Operadores de concatenação +
-- [x] Operador spread [...]
+- [x] Operador spread [...] (também pode ser um rest operator, dependendo de onde for colocado)
+
+# Estruturas de dados:
+## Arrays:
+- [x] Métodos de array: push, [forEach, find, filter]: HOF (Higher Order Function)
