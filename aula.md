@@ -23,7 +23,8 @@ Apresentar os dados
 - [x] while
 
 # Condicionais
-- [x] switch-case
+- [x] switch/case
+- [x] If/else (controle de fluxo)
 
 ## Módulos em Node.js:
 - [x] Importação de módulos (require, CommomJS)
@@ -31,3 +32,7 @@ Apresentar os dados
 
 ## Programação assícronas e Promises:
 - [x] Uso de funções assíncronas (async/await)
+
+# Operadores
+- [x] Operadores de atribuição de valor =
+- [x] Operadores de concatenação +
